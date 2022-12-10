@@ -14,7 +14,7 @@ function Filmes() {
         <>
             <StyledTexto>Selecione o filme</StyledTexto>
             <FilmesContainer>
-                {filmes.map((f)=> <Link to={`/sessoes/${f.id}`} key={f.id}><FilmeCard><img src={f.posterURL} alt={f.title}/></FilmeCard></Link>)}
+                {filmes.map((f) => <Link to={`/sessoes/${f.id}`} key={f.id}><FilmeCard><img src={f.posterURL} alt={f.title}/></FilmeCard></Link>)}
             </FilmesContainer>
         </>
     )
