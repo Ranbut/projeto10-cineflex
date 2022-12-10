@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { StyledTexto, DataContainer, FilmeCard, Navbottom} from "./style"
+import { StyledTexto, DataContainer, FilmeCard, Navbottom} from "./styles"
 import Data from '../Data/Data';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -13,7 +13,7 @@ function Sessoes() {
         const requisicao = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/movies/${params.id}/showtimes`);
         requisicao.then(resposta => {
             setSessoes(resposta.data);
-            setData(resposta.data.days)
+            setData(resposta.data.days);
         });
     }, [params.id]);
 
