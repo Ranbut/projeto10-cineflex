@@ -19,7 +19,7 @@ function Assento({seat, selecionados, setSelecionados}) {
         }
     }
     return(
-        <StyledAssento disponivel={seat.isAvailable} selecionado={selecionados.find(e => e === seat)} onClick={clicar}>{seat.name}</StyledAssento>
+        <StyledAssento data-test="seat" disponivel={seat.isAvailable} selecionado={selecionados.find(e => e === seat)} onClick={clicar}>{seat.name}</StyledAssento>
     )
 }
 

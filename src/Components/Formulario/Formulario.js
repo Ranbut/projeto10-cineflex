@@ -21,7 +21,7 @@ function Formulario({selecionados, nome, setNome, cpf, setCpf}){
             <TextoInput required maxLength='40' type="text" value={nome} placeholder="Digite seu nome..." onChange={e => setNome(e.target.value)} />
             <p>CPF do comprador:</p>
             <TextoInput required minLength='14' maxLength='14' type="text" value={cpf} placeholder="Digite seu CPF..." onChange={e => setCpf(e.target.value)} />
-            <Botao type="submit">Reservar assento(s)</Botao>
+            <Botao data-test="book-seat-btn" type="submit">Reservar assento(s)</Botao>
         </FormContainer>
     )
 }
