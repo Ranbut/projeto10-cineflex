@@ -9,8 +9,9 @@ function Assento({seat, selecionados, setSelecionados}) {
             if(selecionados.find(e => e === seat)){
                 let array = [];
                 for(let i = 0; i < selecionados.length; i++){
-                    if(selecionados[i] !== seat) 
+                    if(selecionados[i] !== seat){
                         array.push(selecionados[i]);
+                    }
                 }
                 setSelecionados([...array]);
             }else{
