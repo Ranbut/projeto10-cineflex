@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Navbottom from '../Navbottom/Navbottom';
 import Assento from '../Assento/Assento';
 import {AssentosContainer, StyledAssento, DescricaoContainer, StyledTexto} from './styles';
+import Formulario from '../Formulario/Formulario';
 
 function Assentos() {
     const params = useParams();
@@ -35,7 +36,7 @@ function Assentos() {
                     <p>Indisponível</p>
                 </div>
             </DescricaoContainer>
-            
+            <Formulario />
             <Navbottom sessao={assentos}/>
         </>
     )
