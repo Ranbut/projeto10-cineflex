@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const StyledData = styled.div`
     width: 100%;
@@ -35,4 +35,4 @@ const Botao = styled.button`
     margin-left: 8px;
 `
 
-export {StyledData, BotaoContainer, Botao}
+export {StyledData, BotaoContainer, Botao};

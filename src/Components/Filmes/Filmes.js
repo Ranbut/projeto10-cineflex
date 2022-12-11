@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 function Filmes() {
-    const [filmes, setFilmes] = useState([])
+
+    const [filmes, setFilmes] = useState([]);
+
     useEffect(() => {
           const requisicao = axios.get("https://mock-api.driven.com.br/api/v8/cineflex/movies");
           requisicao.then(resposta => {

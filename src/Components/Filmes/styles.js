@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const FilmesContainer = styled.div`
   width: 100%;
@@ -37,4 +37,4 @@ const StyledTexto = styled.div`
   color: #293845;
 `
 
-export {FilmesContainer, FilmeCard, StyledTexto}
+export {FilmesContainer, FilmeCard, StyledTexto};

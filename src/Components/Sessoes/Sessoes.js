@@ -9,6 +9,7 @@ function Sessoes() {
 
     const [sessoes, setSessoes] = useState([]);
     const [data, setData] = useState([]);
+    
     useEffect(() => {
         const requisicao = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/movies/${params.id}/showtimes`);
         requisicao.then(resposta => {

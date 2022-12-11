@@ -1,4 +1,5 @@
 import {StyledNavbottom, Titulo, FilmeCard} from './styles';
+
 function Rodape({sessao}) {
     if(sessao.hasOwnProperty('movie')){
         return(

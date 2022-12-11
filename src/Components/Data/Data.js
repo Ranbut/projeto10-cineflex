@@ -1,4 +1,4 @@
-import {StyledData, BotaoContainer, Botao} from "./styles"
+import {StyledData, BotaoContainer, Botao} from "./styles";
 import { Link } from "react-router-dom";
 
 function Data({data}) {
@@ -12,4 +12,4 @@ function Data({data}) {
     )
 }
 
-export default Data
+export default Data;

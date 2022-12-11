@@ -1,23 +1,26 @@
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Navbottom from '../Navbottom/Navbottom';
+import Rodape from '../Rodape/Rodape';
 import Assento from '../Assento/Assento';
 import {AssentosContainer, StyledAssento, DescricaoContainer, StyledTexto} from './styles';
 import Formulario from '../Formulario/Formulario';
 
-function Assentos() {
+function Assentos({nome, setNome, cpf, setCpf, selecionados, setSelecionados, assentos, setAssentos}) {
+
     const params = useParams();
-    const [assentos, setAssentos] = useState([]);
-    const [seats, setSeats] = useState([])
-    const [selecionados, setSelecionados] = useState([])
+    const [seats, setSeats] = useState([]);
+
     useEffect(() => {
+        
         const requisicao = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/showtimes/${params.id}/seats`);
+
         requisicao.then(resposta => {
             setAssentos(resposta.data);
             setSeats(resposta.data.seats);
         });
     }, [params.id]);
+    
     return (
         <>
             <StyledTexto>Selecione o(s) assento(s)</StyledTexto>
@@ -36,8 +39,8 @@ function Assentos() {
                     <p>Indisponível</p>
                 </div>
             </DescricaoContainer>
-            <Formulario />
-            <Navbottom sessao={assentos}/>
+            <Formulario selecionados={selecionados} nome={nome} setNome={setNome} cpf={cpf} setCpf={setCpf}/>
+            <Rodape sessao={assentos}/>
         </>
     )
 }

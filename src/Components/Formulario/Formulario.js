@@ -1,20 +1,30 @@
-import { useState } from 'react';
-import {TextoInput, FormContainer, Botao} from './styles';
+import {TextoInput, FormContainer, Botao} from "./styles";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
-
-export default function Formulario(){
-    const [nome, setNome] = useState("")
-    const [cpf, setCpf] = useState("")
-    function reservarAssento (event) {
+function Formulario({selecionados, nome, setNome, cpf, setCpf}){
+    const navigate = useNavigate();
+    
+    function reservar (event) {
 		event.preventDefault();
+        const ids = selecionados.map((s) => s.id)
+        const requisicao = axios.post("https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many", {
+			ids: ids,
+            name: nome,
+			cpf: cpf
+		});
+        requisicao.then(() => navigate("/sucesso"));
 	}
     return(
-        <FormContainer onSubmit={reservarAssento}>
+        <FormContainer onSubmit={reservar}>
             <p>Nome do comprador:</p>
-            <TextoInput required type="text" value={nome} placeholder="Digite seu nome..." onChange={e => setNome(e.target.value)} />
+            <TextoInput required maxLength='40' type="text" value={nome} placeholder="Digite seu nome..." onChange={e => setNome(e.target.value)} />
             <p>CPF do comprador:</p>
-            <TextoInput required type="text" value={cpf} placeholder="Digite seu CPF..." onChange={e => setCpf(e.target.value)} />
+            <TextoInput required minLength='14' maxLength='14' type="text" value={cpf} placeholder="Digite seu CPF..." onChange={e => setCpf(e.target.value)} />
             <Botao type="submit">Reservar assento(s)</Botao>
         </FormContainer>
     )
 }
+
+
+export default Formulario;

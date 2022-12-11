@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const TextoInput = styled.input`
     margin-left: 24px;
