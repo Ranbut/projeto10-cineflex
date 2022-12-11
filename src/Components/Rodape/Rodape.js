@@ -3,7 +3,7 @@ import {StyledNavbottom, Titulo, FilmeCard} from './styles';
 function Rodape({sessao}) {
     if(sessao.hasOwnProperty('movie')){
         return(
-            <StyledNavbottom data-test="footer">
+            <StyledNavbottom>
                 <FilmeCard>
                     <img src={sessao.movie.posterURL} alt={sessao.movie.title} />
                 </FilmeCard>
@@ -12,7 +12,7 @@ function Rodape({sessao}) {
         )
     }else{
         return(
-            <StyledNavbottom>
+            <StyledNavbottom data-test="footer">
                 <FilmeCard>
                     <img src={sessao.posterURL} alt={sessao.title} />
                 </FilmeCard>
