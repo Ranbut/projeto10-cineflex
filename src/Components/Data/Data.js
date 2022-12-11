@@ -6,7 +6,7 @@ function Data({data}) {
         <div data-test="movie-day">
             <StyledData>{data.weekday} - {data.date}</StyledData>
             <BotaoContainer>
-                {data.showtimes.map((h) => <Link key={h.id} to={`/assentos/${h.id}`}><Botao>{h.name}</Botao></Link>)}
+                {data.showtimes.map((h) => <Link key={h.id} to={`/assentos/${h.id}`}><Botao data-test="showtime">{h.name}</Botao></Link>)}
             </BotaoContainer>
         </div>
     )
