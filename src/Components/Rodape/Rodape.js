@@ -9,7 +9,7 @@ function Rodape({sessao}) {
                 </FilmeCard>
                 <Titulo>{sessao.movie.title}<br/>{sessao.day.weekday} - {sessao.name}</Titulo>
             </StyledNavbottom>
-        )
+        );
     }else{
         return(
             <StyledNavbottom data-test="footer">
@@ -18,7 +18,7 @@ function Rodape({sessao}) {
                 </FilmeCard>
                 <Titulo>{sessao.title}</Titulo>
             </StyledNavbottom>
-        )
+        );
     }
 }
 
