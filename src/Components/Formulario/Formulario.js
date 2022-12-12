@@ -18,10 +18,10 @@ function Formulario({selecionados, nome, setNome, cpf, setCpf}){
     return(
         <FormContainer onSubmit={reservar}>
             <p>Nome do comprador:</p>
-            <TextoInput data-test="client-name" required maxLength='40' type="text" value={nome} placeholder="Digite seu nome..." onChange={e => setNome(e.target.value)} />
+            <TextoInput required type="text" value={nome} placeholder="Digite seu nome..." onChange={e => setNome(e.target.value)} data-test="client-name"/>
             <p>CPF do comprador:</p>
-            <TextoInput data-test="client-cpf" required minLength='14' maxLength='14' type="text" value={cpf} placeholder="Digite seu CPF..." onChange={e => setCpf(e.target.value)} />
-            <Botao data-test="book-seat-btn" type="submit">Reservar assento(s)</Botao>
+            <TextoInput required type="text" value={cpf} placeholder="Digite seu CPF..." onChange={e => setCpf(e.target.value)} data-test="client-cpf"/>
+            <Botao type="submit" data-test="book-seat-btn">Reservar assento(s)</Botao>
         </FormContainer>
     )
 }

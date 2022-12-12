@@ -9,7 +9,7 @@ function Data({data}) {
                 {data.showtimes.map((h) => <Link key={h.id} to={`/assentos/${h.id}`}><Botao data-test="showtime">{h.name}</Botao></Link>)}
             </BotaoContainer>
         </div>
-    )
+    );
 }
 
 export default Data;
